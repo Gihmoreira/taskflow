@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <span class="title">Minhas tarefas</span>
+  <span class="spacer"></span>
+  <!-- botão de filtro -->
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>filter_list</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container class="drawer-container">
+  <mat-drawer #drawer mode="side" position="end">
+    <h3 class="drawer-title">Filtros</h3>
+    <div class="drawer-title">
+      <button mat-button (click)="setFilter('all'); drawer.close()">
+        Todas
+      </button>
+      <button mat-button (click)="setFilter('pending'); drawer.close()">
+        Pendentes
+      </button>
+      <button mat-button (click)="setFilter('completed'); drawer.close()">
+        Concluídas
+      </button>
+    </div>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <ul class="task-list">
+      <li *ngFor="let task of filteredTasks">
+        <mat-checkbox [checked]="task.completed" (change)="toggle(task)">
+        </mat-checkbox>
+        <span [class.done]="task.completed">{{ task.title }}</span>
+        <button mat-icon-button color="warn" (click)="delete(task.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </mat-drawer-content>
+</mat-drawer-container>

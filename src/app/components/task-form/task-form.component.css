@@ -1,0 +1,41 @@
+.headerForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.task-form {
+  display: flex;
+  gap: 12px;
+}
+.full-width {
+  flex: 1;
+}
+.success-snackbar {
+  background-color: #4caf50;
+  color: #fff;
+}
+.error-snackbar {
+  background-color: #f44336;
+  color: #fff;
+}
+.headerForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.drawer-container {
+  height: auto;
+}
