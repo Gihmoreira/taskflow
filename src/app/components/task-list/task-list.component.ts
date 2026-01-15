@@ -33,7 +33,7 @@ export class TaskListComponent implements OnInit {
       this.tasks = tasks;
     });
 
-    this.taskService.load(); // carrega inicial
+    this.taskService.load();
   }
 
   toggle(task: Task) {

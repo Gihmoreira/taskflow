@@ -1,10 +1,11 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent, HttpClientTestingModule],
     }).compileComponents();
   });
 
@@ -20,10 +21,12 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('taskflow');
   });
 
-  it('should render title', () => {
+  it('should render toolbar title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, taskflow');
+    expect(compiled.querySelector('mat-toolbar span')?.textContent).toContain(
+      'TaskFlow',
+    );
   });
 });
